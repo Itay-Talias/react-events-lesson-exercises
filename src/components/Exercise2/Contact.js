@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Contact extends Component {
-  render() {
-    return (
-      <div >
-        {/* should render a "name" recieved in props */}
-        {/* Should also reieve the displayConvo prop, and call the function onClick */}
-      </div>
-    );
-  }
+    displayConvo = () => {
+        this.props.displayConvo(this.props.name);
+    };
+    render() {
+        return (
+            <div className="contact" onClick={this.displayConvo}>
+                {this.props.name}
+            </div>
+        );
+    }
 }
 
 export default Contact;
